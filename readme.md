@@ -1,5 +1,3 @@
-# apirest-aws-terraform
-
 # Example of API Rest on AWS 
 
 Amazon API Gateway is a fully managed serverless offering from AWS that makes it easy for developers to develop and maintain API
@@ -34,42 +32,55 @@ Next, create separate files for each API gateway resources, openapi specificatio
    
     Now that we’ve created a method, we need to create an integration type for our method so that it can return an appropriate response.
     
-
-    ```
-    The Method Request: This is the part of your API exposed to your users. 
-    This includes auth, input body, headers, and query string params.
-    
-    Integration Request: This is what the API is integrating with to, well, 
-    create the API! It’s how the gateway communicates with Lambda.
-
-    Method Response: This is similar to the Method Request, where you can 
-    define what the method can return.
-
-    Integration Response: This is what we believe will be coming back from 
-    the integration (grayed out here, as mentioned, we don’t have access to it 
-    with the proxy integration).
-
-    ```
-
-
 6. Finally, let’s create a stage and deployment for this API gateway to have a URL to invoke and test our integration. 
 
 
 7. To do -> "add lambda function in backend"
 
 
-|terraform-apirest-aws
-  |
-  |--modules/api_gateway
-  |     |--rest_api.tf
-  |     |--outputs.tf
-  |     |--variables.tf
-  |
-  |-- main.tf
-  |-- variables.tf
-  |-- providers.tf
-  |-- outputs.tf
+## Contributing
 
+**The Method Request**: This is the part of your API exposed to your users.This includes auth, input body, headers, and query string params.
+
+**Integration Request**: This is what the API is integrating with to, well, create the API! It’s how the gateway communicates with Lambda.
+
+**Method Response**: This is similar to the Method Request, where you can  define what the method can return.
+
+**Integration Response**: This is what we believe will be coming back from  the integration (grayed out here, as mentioned, we don’t have access to it 
+with the proxy integration).
+    
+
+## Structure
+
+```
+terraform-apirest-aws
+        |
+        |--modules/api_gateway
+        |     |--rest_api.tf
+        |     |--outputs.tf
+        |     |--variables.tf
+        |
+        |-- main.tf
+        |-- variables.tf
+        |-- providers.tf
+        |-- outputs.tf
+
+```
+## Deploy 
+
+```
+terraform init 
+```
+
+```
+terraform plan
+```
+```
+terraform apply -auto-approve 
+```
+```
+terraform destroy
+```
 
 
 
