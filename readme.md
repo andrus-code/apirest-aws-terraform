@@ -78,6 +78,14 @@ terraform plan
 ```
 terraform apply -auto-approve 
 ```
+
+### Testing
+
+curl -X GET *https://rest_api_url*
+
+![testing](testing.png)
+
+
 ```
 terraform destroy
 ```
