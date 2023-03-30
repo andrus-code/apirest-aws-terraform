@@ -14,9 +14,9 @@ Next, create separate files for each API gateway resources, openapi specificatio
 
 2. Create API Gateway Module
 
-   Create directory modules/api_gateway
+   - Create directory modules/api_gateway
    
-   - rest_api.tf
+     - Create rest_api.tf
 
 3. Create resources
 
@@ -35,7 +35,7 @@ Next, create separate files for each API gateway resources, openapi specificatio
 6. Finally, let’s create a stage and deployment for this API gateway to have a URL to invoke and test our integration. 
 
 
-7. To do -> "add lambda function in backend"
+7. Pending task:  **lambda function in backend**
 
 
 ## Contributing
