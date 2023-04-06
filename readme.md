@@ -4,7 +4,7 @@ When you invoke your HTTP API, API Gateway routes the request to your Lambda fun
 
 \
 \
-![arquitecture](0.png)
+![arquitecture](img/0.png)
 
 
 
@@ -76,20 +76,20 @@ terraform apply -auto-approve
 
 GET empty
 
-![testing](1.png)
+![testing](img/1.png)
 
 PUT one item
 
-![testing](2.png)
+![testing](img/2.png)
 
 GET item 
 
-![testing](3.png)
+![testing](img/3.png)
 
 
 DELETE item 
 
-![testing](4.png)
+![testing](img/4.png)
 
 
 ```
