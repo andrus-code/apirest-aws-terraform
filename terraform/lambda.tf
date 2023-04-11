@@ -22,7 +22,7 @@ resource "aws_lambda_function" "test_lambda" {
 
 resource "aws_iam_role" "iam_for_lambda" {
   //name               = "http-crud-role"
-  name = "${var.app_id}-${var.app_env}-role2"
+  name = "${var.app_id}-${var.app_env}-role"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -42,7 +42,7 @@ EOF
 
 resource "aws_iam_policy" "policy" {
   #name        = "http-crud-policy"
-  name        = "${var.app_id}-${var.app_env}-policy2"
+  name        = "${var.app_id}-${var.app_env}-policy"
   path        = "/"
   description = "My test policy"
   policy      = <<EOF
