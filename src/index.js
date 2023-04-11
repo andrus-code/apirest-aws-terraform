@@ -4,6 +4,7 @@ const dynamo = new AWS.DynamoDB.DocumentClient();
 
 const tableName = "http-crud-tutorial-items-tf"
 
+//to do on different ambients
 //let environment = process.env.ENV
 
 exports.handler = async (event, context) => {

@@ -1,6 +1,6 @@
 #API Gateway
 resource "aws_apigatewayv2_api" "api" {
-  name          = "http-crud-api"
+  name          = "${var.app_id}-${var.app_env}-api"
   protocol_type = "HTTP"
 }
 

@@ -1,10 +1,10 @@
 resource "aws_lambda_function" "test_lambda" {
-  filename         = "../function.zip"
-  function_name    = "http-crud-lambda"
+  filename         = "${var.package}"
+  function_name    = "${var.app_id}-${var.app_env}"
   role             = aws_iam_role.iam_for_lambda.arn
   handler          = "index.handler"
   publish          = true
-  source_code_hash = filesha256("../function.zip")
+  source_code_hash = filesha256("${var.package}")
   timeout          = 20
   runtime          = "nodejs16.x"
 
@@ -16,12 +16,13 @@ resource "aws_lambda_function" "test_lambda" {
   tags = {
     Project     = "demo-terraform"
     Owner       = "DevOps Team"
-    Environment = "dev"
+    Environment = "${var.app_env}"
   }
 }
 
 resource "aws_iam_role" "iam_for_lambda" {
-  name               = "http-crud-role"
+  //name               = "http-crud-role"
+  name = "${var.app_id}-${var.app_env}-role"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -40,7 +41,8 @@ EOF
 }
 
 resource "aws_iam_policy" "policy" {
-  name        = "http-crud-policy"
+  #name        = "http-crud-policy"
+  name        = "${var.app_id}-${var.app_env}-policy"
   path        = "/"
   description = "My test policy"
   policy      = <<EOF
