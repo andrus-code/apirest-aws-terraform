@@ -57,6 +57,7 @@ jobs:
         terraform validate
         terraform plan -var-file tfvars/$ENV.tfvars -out plan.out
         terraform apply "plan.out"
+        terraform destroy
       env:
         ENV: dev
         AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID }}
