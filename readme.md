@@ -96,5 +96,8 @@ DELETE item
 terraform destroy
 ```
 
+### Github Actions
+
+![deployment](img/5.png)
 
 
