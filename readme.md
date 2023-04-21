@@ -1,4 +1,4 @@
-# Example of API on AWS  with Lambda and DynamoDB
+# API on AWS  with Lambda and DynamoDB and auto deploy with Github Actions
 
 When you invoke your HTTP API, API Gateway routes the request to your Lambda function. The Lambda function interacts with DynamoDB, and returns a response to API Gateway. API Gateway then returns a response to you.
 
